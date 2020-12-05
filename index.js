@@ -8,6 +8,16 @@ const questionsRoute = require('./routes/questions')
 const quizRoute = require('./routes/quiz')
 const userRoute = require('./routes/user')
 
+
+
+// global variable
+g_users = []
+g_question_timing = 2000 //Interval between each questions
+g_question_count = 5
+g_trigger_delay = 5000
+
+database_URL = ''
+
 // config
 require('dotenv').config()
 
@@ -27,14 +37,6 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
-
-
-// global variable
-g_users = []
-g_question_timing = 2000 //Interval between each questions
-g_question_count = 5
-g_trigger_delay = 5000
-
 
 
 // initializing routes
